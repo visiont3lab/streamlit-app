@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_webrtc import webrtc_streamer
 import cv2
 import av
+import imutils
 
 st.title("Webrtc Camera")
 model_face = cv2.CascadeClassifier("models/haarcascade_frontalface_default.xml")
@@ -11,6 +12,7 @@ class VideoProcessor:
         frame = frame.to_ndarray(format="bgr24")
 
         #####
+        resized = imutils.resize(frame, width=400)
         faces = model_face.detectMultiScale(frame,scaleFactor=1.8,minNeighbors=4, flags=cv2.CASCADE_DO_ROUGH_SEARCH | cv2.CASCADE_SCALE_IMAGE)
         for face in faces:
             x,y,w,h = face
