@@ -1,7 +1,5 @@
 # Streamlit Segmentation App
 
-This app is going to take an image ..
-
 * [Streamlit-WebRTC](https://github.com/whitphx/streamlit-webrtc)
 
 ```
